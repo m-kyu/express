@@ -50,5 +50,5 @@ app.put('/test/', function (req, res) {
     res.send(data.test);
 })
 
-app.listen(3030)
+app.listen(3000)
 
