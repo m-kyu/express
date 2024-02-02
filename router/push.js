@@ -2,11 +2,11 @@ const pushRouter = require('express').Router();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const webpush = require('web-push');
-const app = express();
 
-app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+
+pushRouter.use(cors());
+pushRouter.use(bodyParser.urlencoded({ extended: false }));
+pushRouter.use(bodyParser.json());
 
 let vapidKeys = webpush.generateVAPIDKeys();
 
