@@ -26,6 +26,10 @@ pushRouter.get('/', async function (req, res) {
         .then(function () {
           res.sendStatus(202);
         })
+        .catch(function (error) {
+            res.sendStatus(500);
+            console.log(error);
+          });
     }, 3000);
 
   })
