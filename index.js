@@ -13,5 +13,5 @@ app.use('/', test.testRouter);
 app.use('/push', push);
 
 
-app.listen(3030, test.dbConnect)
+app.listen(3000, test.dbConnect)
 
