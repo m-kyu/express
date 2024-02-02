@@ -25,6 +25,10 @@ const crud = async (type, info)=>{
   return data;
 }
 
+testRouter.get('/', async function (req, res) {
+  res.send('hello');
+})
+
 testRouter.get('/test', async function (req, res) {
     res.send(await crud('get'));
 })
