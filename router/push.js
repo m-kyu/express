@@ -2,6 +2,7 @@ const pushRouter = require('express').Router();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const webpush = require('web-push');
+const app = express();
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
