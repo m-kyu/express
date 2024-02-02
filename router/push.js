@@ -22,7 +22,7 @@ pushRouter.get('/', async function (req, res) {
     let data = JSON.stringify({msg:'hello pwa'})
 
     setTimeout(function () {
-        webpush.sendNotification(req.body.subscribe, data)
+        webpush.sendNotification(req.body.subscribe)
         .then(function () {
           res.sendStatus(202);
         })
