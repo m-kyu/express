@@ -1,4 +1,3 @@
-
 const testRouter = require('express').Router();
 const { MongoClient } = require('mongodb');
 
@@ -7,9 +6,9 @@ const client = new MongoClient(connectUrl);
 let collection;
 
 const crud = async (type, info)=>{
-    await client.connect(); 
-    const db = await client.db('bucket');
-    collection = await db.collection('bucket-list');
+  await client.connect();
+  const db = await client.db('bucket');
+  collection = await db.collection('bucket-list');
 
   switch(type){
     case 'post':await collection.insertOne(info); break;
@@ -42,7 +41,6 @@ testRouter.delete('/test/:id', async function (req, res) {
 testRouter.put('/test/', async function (req, res) {
     res.send(await crud('put',req.body));
 })
-
 
 module.exports = testRouter;
 
