@@ -9,9 +9,9 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use('/', test.testRouter);
+app.use('/', test);
 app.use('/push', push);
 
 
-app.listen(3000, test.dbConnect)
+app.listen(3000)
 

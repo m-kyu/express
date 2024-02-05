@@ -6,11 +6,8 @@ const connectUrl = process.env.MONGO_DB;
 const client = new MongoClient(connectUrl);
 let collection;
 
-const dbConnect = async ()=>{
-  await client.connect(); 
-}
-
 const crud = async (type, info)=>{
+    await client.connect(); 
     const db = await client.db('bucket');
     collection = await db.collection('bucket-list');
 
@@ -47,6 +44,6 @@ testRouter.put('/test/', async function (req, res) {
 })
 
 
-module.exports = {testRouter, dbConnect};
+module.exports = testRouter;
 
 
